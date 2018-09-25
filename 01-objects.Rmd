@@ -1,0 +1,64 @@
+---
+title: "Objects in R"
+author: "Ahmed Tawfik"
+date: "September 25, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+R has five basic or "atomic" classes of objects: character, numberic, integer, logical, complex
+
+We can know the class of the object using the class funciton.
+There is also the mode function which returns the mode of R objects.
+
+```{r}
+character.obj <- 'a'
+class(character.obj) # "character"
+mode(character.obj) # "character"
+
+string.obj <- "abc" # String is considered as characters in R
+class(string.obj) # "character"
+mode(string.obj) # "character"
+
+num.obj <- 2
+class(num.obj) # "numeric"
+mode(num.obj) # "numeric"
+
+int.obj <- as.integer(num.obj) #numeric is the default, we have to use as.integer function to create integer objects
+class(int.obj) # "integer"
+mode(int.obj) # "numeric" , still R will treat is as numeric during the computations
+
+
+logical.obj <- TRUE
+class(logical.obj) # "logical"
+mode(logical.obj) # "logical"
+
+complex.obj <- 1+2i
+class(complex.obj) # "complex"
+mode(complex.obj) # "complex"
+
+
+```
+
+Alternative ways to test the object mode using is.numeric(), is.charater(), and is.logical(), etc..
+```{r}
+is.numeric(num.obj) # TRUE
+is.logical(num.obj) # FALSE
+is.character(string.obj) # TRUE
+```
+
+The function object could be also checked using the class and mode functions
+```{r}
+mean(c(3,4,6,7)) # 5
+class(mean) # "function"
+mode(mean) # "function"
+is.function(mean) # TRUE
+```
+
+
+
+
+
